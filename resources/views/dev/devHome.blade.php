@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Client') }} Mr {{ Auth::user()->name }}</div>
+                <div class="card-header">{{ __('Developer ') }} Mr {{ Auth::user()->name }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,21 +15,21 @@
                     @endif
 
 						@if(Auth::check())
-						<input type="hidden" id="idclt" value="{{ Auth::user()->id }}" >
-						<input type="hidden" id="routeclt" value="{{ route('cltProject') }}" >
+						<input type="hidden" id="iddev" value="{{ Auth::user()->id }}" >
+						<input type="hidden" id="routedevs" value="{{ route('devsProject') }}" >
 						<input type="hidden" id="_token" value="{{ csrf_token() }}" >
                                 <table class="table">
                                     <thead>
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Developer Name</th>
+                                        <th scope="col">Client Name</th>
                                         <th scope="col">Project Name</th>
                                         <th scope="col">Start Date</th>
 										<th scope="col">End Date</th>
 										<th scope="col">Description</th>
                                     </tr>
                                     </thead>
-                                    <tbody id="resultClientProject" >
+                                    <tbody id="resultDevProject" >
                                     </tbody>
                                 </table>
 						@endif
@@ -41,14 +41,14 @@
 <script>
 window.addEventListener('load', (event) => {
 	// GET request for remote image in node.js
-	let id = document.getElementById('idclt').value;
-	let route = document.getElementById('routeclt').value;
+	let iddev = document.getElementById('iddev').value;
+	let routed = document.getElementById('routedevs').value;
 	let token = document.getElementById('_token').value;
 axios({
   method: 'get',
-  url: route,
+  url: routed,
   params: {
-       data: id,
+       data: iddev,
 	   '_token': token
   }
 }).then(function (response) {
@@ -57,13 +57,13 @@ axios({
 	  //
 	  			         console.log(response);
 					 if(len === 0 || response.data.data === 0 ){
-						 document.getElementById("resultClientProject").innerHTML ="<td colspan=\"4\"><div class=\"alert alert-info\">Pas de Project !</div></td>";
+						 document.getElementById("resultDevProject").innerHTML ="<td colspan=\"4\"><div class=\"alert alert-info\">Pas de Project !</div></td>";
 					 }else{
 						   for (let i= 0; i <= len ; i++){
 							   
-						document.getElementById("resultClientProject").innerHTML ="<tr>\n" +
+						document.getElementById("resultDevProject").innerHTML ="<tr>\n" +
                             "      <td>"+ response.data.data[i].id +"</td>\n" +
-                            "      <td>"+response.data.data[i].developer_name +"</td>\n" +
+                            "      <td>"+response.data.data[i].client_name +"</td>\n" +
                             "      <td>"+ response.data.data[i].project_name+"</td>\n" +
                             "      <td>"+ response.data.data[i].start_date +"</td>\n" +
 							"      <td>"+ response.data.data[i].end_date +"</td>\n" +

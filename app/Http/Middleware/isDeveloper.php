@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class IsAdmin
+class isDeveloper
 {
     /**
      * Handle an incoming request.
@@ -16,10 +16,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->is_admin == 1 ){
+        if(auth()->user()->is_admin == 2){
             return $next($request);
         }
 
-        return redirect('home')->with("error","You don't have admin access.");
+        return redirect("home")->with("error","You don't have Developer access.");
     }
 }
