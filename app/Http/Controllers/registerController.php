@@ -21,25 +21,24 @@ class registerController extends Controller
             'type' => 'bail|required',
 
         ]);
-
-        $data = $request->all();
-        $check = $this->create($data);
-        if($check){
-            return back()->with('success','You have registred !');
+		if($request->password === $request->repassword)
+		{
+			//
+		 if(User::insert(['name' => $request->name,'email' => $request->email,'is_admin' => $request->type,'password' => Hash::make($request->password)])){
+            //
+			return response()->json(['data' => true]);
+			
         }else{
-            return back()->with('fail','You have not registred !');
+            //
+			return response()->json(['data' => false]);
         }
+			//
+		}else
+		{
+			//
+			return response()->json(['data' => false]);
+		}
     }
 
 
-    public function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-			'is_admin' => $data['type'],
-            'password' => Hash::make($data['password']),
-            
-        ]);
-    }
 }

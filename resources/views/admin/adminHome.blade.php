@@ -15,6 +15,7 @@
 		@endif
         <div class="row">
             <div class="col-md-6">
+			<!--client bloc start here -->
                 <div class="card">
                     <div class="card-header">
                        Client list
@@ -41,8 +42,8 @@
                                 <td>{{$email = $clients->email}}</td>
                                 <td>client </td>
 								<td>
-									<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModaldelclt{{ $id }}">Delete</button>
-                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalupdateclt{{ $id }}">Update</button>
+									<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModaldelclt{{ $id }}">Delete</button>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalupdateclt{{ $id }}">Update</button>
 								</td>
                             </tr>
                              <!--Delete modal-->
@@ -60,8 +61,8 @@
                                                  Are you sure to delete the client {{ $name }}  ?
                                          </div>
                                          <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                             <button type="submit" class="btn btn-danger">Delete</button>
+                                             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                          </div>
                                          </form>
                                      </div>
@@ -99,7 +100,7 @@
                                                      <div class="row">
                                                          <div class="col-12">
                                                              <select name="type" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
-                                                                 <option selected>Choose a type</option>
+                                                                 
                                                                  <option value="0">Client</option>
                                                                  <option value="2">Developer</option>
                                                              </select>
@@ -108,8 +109,8 @@
                                                  </div>
                                          </div>
                                          <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                             <button type="submit" class="btn btn-info">Update</button>
+                                             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                             <button type="submit" class="btn btn-info btn-sm">Update</button>
                                          </div>
                                          </form>
                                      </div>
@@ -152,8 +153,8 @@
                                 <td>{{$email = $devs->email}}</td>
                                 <td>Developer</td>
 								<td>
-				                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModaldeldev{{$id}}">Delete</button>
-                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalupdatedev{{$id}}">Update</button>
+				                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModaldeldev{{$id}}">Delete</button>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalupdatedev{{$id}}">Update</button>
 								</td>
                             </tr>
                                 <!--Delete modal-->
@@ -171,8 +172,8 @@
                                              Are you sure to delete the developer {{ $name }} ?
                                          </div>
                                          <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                             <button type="submit" class="btn btn-danger">Delete</button>
+                                             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                          </div>
                                          </form>
                                      </div>
@@ -186,7 +187,7 @@
                                  <div class="modal-dialog">
                                      <div class="modal-content">
                                          <div class="modal-header">
-                                             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                             <h5 class="modal-title" id="exampleModalLabel">UPDATE</h5>
                                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                          </div>
                                          <div class="modal-body">
@@ -219,8 +220,8 @@
                                                  </div>
                                          </div>
                                          <div class="modal-footer">
-                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                             <button type="submit" class="btn btn-info">Update</button>
+                                             <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                             <button type="submit" class="btn btn-info btn-sm">Update</button>
                                          </div>
                                          </form>
                                      </div>
@@ -277,10 +278,10 @@
 									<td>{{$start_date = $project->start_date}}</td>
 									<td>{{$end_date = $project->end_date}}</td>
 									<td>{{$description = $project->description}}</td>
-									<td >
+									<td style="width: 20%">
 									 <br>
-                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModalupdatepro{{$id}}">Update</button>
-									<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delpro{{$id}}">Delete</button>
+                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalupdatepro{{$id}}">Update</button>
+									<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delpro{{$id}}">Delete</button>
 									</td>
                                 </tr>
 								<!--Modal Delete project-->
@@ -299,8 +300,8 @@
                                                     Would you like to delete this project ?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                                             </div>
                                             </form>
                                         </div>
@@ -383,8 +384,8 @@
 
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
                                             </div>
                                             </form>
                                         </div>
@@ -402,7 +403,7 @@
         </div>
         <!--project bloc end here-->
         <!---->
-        <!--The client modal registration start here-->
+        <!--The USER modal registration start here-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -411,20 +412,33 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="{{route('register')}}">
-                            @csrf
+                        <form>
                             <div class="container">
+									 @if ($errors->any())
+                                         <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                    @endforeach
+                                                 </ul>
+                                          </div>
+                                     @endif
+								<div id="errormsg">
+								    
+								<div>
                                 <div class="row">
                                     <div class="col">
                                         <div class="mb-3">
+										<input type="hidden" id="token" class="form-control" value="{{ csrf_token() }}" required>
+										<input type="hidden" id="regroute" class="form-control" value="{{route('register')}}" required>
                                             <label for="exampleFormControlInput1" class="form-label">Name </label>
-                                            <input type="text" name="name" class="form-control"  placeholder="name" required>
+                                            <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror"  placeholder="name" required>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                            <input type="email" name="email" class="form-control"  placeholder="name@example.com" required>
+                                            <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror"  placeholder="name@example.com" required>
                                         </div>
                                     </div>
                                 </div>
@@ -432,18 +446,17 @@
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Password </label>
-                                            <input type="password" name="password" class="form-control"  placeholder="" required>
+                                            <input type="password" id="pwd" name="password" class="form-control @error('password') is-invalid @enderror"  placeholder="" required>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Confirm-password</label>
-                                            <input type="password" class="form-control"  placeholder="" required>
+                                            <input type="password" id="pwd2" class="form-control @error('email') is-invalid @enderror"  placeholder="" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <select name="type" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
-                                            <option selected>Choose a type</option>
+                                        <select name="type" id="select" class="form-select form-select-sm" aria-label=".form-select-sm example" required>
                                             <option value="0">Client</option>
                                             <option value="2">Developer</option>
                                         </select>
@@ -452,8 +465,8 @@
                             </div>
                      </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" id="btnsub" class="btn btn-primary btn-sm">Register</button>
                     </div>
                         </form>
                 </div>
@@ -534,8 +547,8 @@
 						 </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add project</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Add project</button>
                     </div>
 					</form>
                 </div>

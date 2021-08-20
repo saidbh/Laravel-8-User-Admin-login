@@ -29,11 +29,6 @@ Route::get('/', function () {
 */
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-/*This route is for registration ONLY*/
-Route::post('/register', [registerController::class,'register'])->name('register');
-/*This route is for registration ONLY*/
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,6 +79,10 @@ Route::get('developer/home', [HomeController::class, 'devHome'])->name('develope
 |These routes are reserved for axios request ONLY .
 |
 */
+
+/*This route is for registration ONLY*/
+Route::post('/register', [registerController::class,'register'])->name('register');
+/*This route is for registration ONLY*/
 
 Route::get('client/project', [ProjectController::class, 'getClientProject'])->name('cltProject');
 Route::get('developer/project', [ProjectController::class, 'getDevelopersProject'])->name('devsProject');
